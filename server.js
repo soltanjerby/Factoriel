@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const url = require("url");
 const os = require("os-utils");
+const fact = require("./fact");
 
 app.get("/", (req, res) => {
   res.send("Hello from App Engine!");
@@ -9,12 +10,8 @@ app.get("/", (req, res) => {
 
 app.get("/fact", (req, res) => {
   const queryObject = url.parse(req.url, true).query;
-  let fact = 1;
-  for (let i = 1; i <= queryObject.n; i++) {
-    fact *= i;
-  }
   res.json({
-    result: fact,
+    result: fact.factoriel(queryObject.n),
   });
 });
 
