@@ -12,5 +12,8 @@ install:
 test: install
 	npm run test
 
+lint: install
+	npx eslint **/*.js
+
 start_dev: install
 	npm start
