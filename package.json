@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "mocha"
+    "test": "mocha",
+    "eslint:github-action": "eslint ."
   },
   "repository": {
     "type": "git",
