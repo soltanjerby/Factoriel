@@ -10,7 +10,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -27,3 +27,11 @@ jobs:
           cache: "npm"
       - name: Test
         run: make test
+
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: eslint
+        uses: stefanoeb/eslint-action@1.0.2
