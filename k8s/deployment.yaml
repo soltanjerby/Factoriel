@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: factoriel
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: factoriel
+  template:
+    metadata:
+      labels:
+        app: factoriel
+    spec:
+      containers:
+        - name: factoriel
+          image: soltanjerby/factoriel:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
