@@ -1,0 +1,6 @@
+global:
+  scrape_interval: 5s
+scrape_configs:
+  - job_name: "factorial"
+    static_configs:
+      - targets: ["http://factoriel.default.svc.cluster.local"]
